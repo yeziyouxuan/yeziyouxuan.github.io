@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/01/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java数据与算法</title>
+    <url>/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><h5 id="1-数据结构和算法面试题"><a href="#1-数据结构和算法面试题" class="headerlink" title="1.数据结构和算法面试题"></a>1.数据结构和算法面试题</h5><ol>
+<li><strong>算法是程序的灵魂</strong>,优秀的程序可以再海量数据计算时,依然保持着告诉计算</li>
+<li><p>一般来讲,程序会使用了内存计算框架(比如Spark)和缓存技术(比如Redis)来优化程序,在深入的思考一下,这些计算框架和缓存技术,他的核心功能在哪部分呢?</p>
+</li>
+<li><p>数据结构是一门<strong>研究组织数据方式</strong>的学科,有了编程语言也就有了数据结构,学好数据结构可以编写出更加漂亮,更加有效率的代码.</p>
+</li>
+</ol>
+<hr>
+<h5 id="2-数据结构"><a href="#2-数据结构" class="headerlink" title="2.数据结构"></a>2.数据结构</h5><ol>
+<li><p>数据结构包括:<strong>线性结构</strong>和<strong>非线性结构</strong></p>
+<ol>
+<li><p>线性结构是最常见的数据结构,其特点是<strong>数据元素之间存在一对一</strong>的线性关系</p>
+</li>
+<li><p>线性结构有两种不同的存储结构,即<strong>顺序存储结构(数组)</strong>和<strong>链式存储结构(链表)</strong>.顺序存储的线性表成为顺序表,顺序表<strong>存储元素是连续的</strong></p>
+</li>
+<li>链式存储的线性表成为链表,链表中的存储元素<strong>不一定是连续的</strong>,元素存放在数据元素以及相邻元素的地址信息</li>
+<li>线性结构常见的有: <strong>数组</strong>、<strong>队列</strong>、<strong>链表和栈</strong>,后面我们会详细讲解.</li>
+<li>非线性结构包括:二维数组,多维数组,广义表,<strong>图结构</strong>,<strong>树结构</strong></li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="2-稀疏数组-五子棋例子"><a href="#2-稀疏数组-五子棋例子" class="headerlink" title="2.稀疏数组(五子棋例子)"></a>2.稀疏数组(五子棋例子)</h3><h5 id="1-基本介绍"><a href="#1-基本介绍" class="headerlink" title="1.基本介绍"></a>1.基本介绍</h5><ol>
+<li>纪录数组一共有几行几列,有多少个不同的值</li>
+<li>把具有不同值的元素的行列及值纪录在一个小规模的数组中,从而<strong>缩小程序</strong>的规模</li>
+<li>因为该二维数组很多值都是默认0,因此纪录了<strong>很多没有意义的数据—&gt;稀疏数组</strong></li>
+</ol>
+<p><img src="/.com//Users\ma\blogs\source\_posts\java数据与算法\xssz.png" alt="稀疏数组"></p>
+<hr>
+<h5 id="2-应用实例"><a href="#2-应用实例" class="headerlink" title="2.应用实例"></a>2.应用实例</h5><ol>
+<li>使用稀疏数组,来保留类似前面的二维数组(棋盘,地图等等)</li>
+<li>把稀疏数组存盘,并且可以从新恢复原来的二维数组数</li>
+<li>整体思路分析</li>
+</ol>
+<p><img src="/.com//Users\ma\blogs\source\_posts\java数据与算法\ssszsl.png" alt></p>
+<hr>
+<h3 id="3-队列-银行排队项目"><a href="#3-队列-银行排队项目" class="headerlink" title="3.队列(银行排队项目)"></a>3.队列(银行排队项目)</h3><h5 id="1-队列介绍"><a href="#1-队列介绍" class="headerlink" title="1.队列介绍"></a>1.队列介绍</h5><ol>
+<li>队列是一个有序列表,可以用<strong>数组(顺序存储)</strong>或是<strong>链表(链式存储)</strong>来实现.</li>
+<li>遵循<strong>先入后出</strong>的原则,即:先存入队列的数据,要先取出,后存入的要后取出</li>
+</ol>
+<p><img src="/.com//Users\ma\blogs\source\_posts\java数据与算法\队列.png" alt="队列"></p>
+<hr>
+<h5 id="2-数组模拟队列"><a href="#2-数组模拟队列" class="headerlink" title="2.数组模拟队列"></a>2.数组模拟队列</h5><ol>
+<li>队列本身是有序列表,若使用数组的结构来存储队列的数据,则队列数组的声明如下图,其中maxSize是该队列的最大容量.</li>
+<li><p>因为队列的输出,输入时分别从前后端来处理,因此需要两个变量<strong>front</strong>及<strong>rear分别记录队列前后端的下标,</strong>front会随着数据输出而改变,而rear则是随着数据输入而改变.</p>
+</li>
+<li><p>当我们将数据存入队列时称为”addQueue”,处理需要两个步骤:<strong>思路分析</strong></p>
+<ol>
+<li>将尾指针往后移:rear+1,当front = rear[空]</li>
+<li>若尾指针往后移小于队列的最大下标maxSize-1,则将数据存入rear所指的数组元素,否则无法存入数据.rear == maxSize-1[队列满]</li>
+</ol>
+</li>
+</ol>
+<p><img src="/.com//Users\ma\blogs\source\_posts\java数据与算法\队列1.png" alt="队列1"></p>
+<hr>
+<h5 id="3-队列介绍"><a href="#3-队列介绍" class="headerlink" title="3.队列介绍"></a>3.队列介绍</h5><ol>
+<li><p>队列是一个有序列表,可以用<strong>数组</strong>或是<strong>链表</strong>来实现</p>
+</li>
+<li><p>遵循<strong>先入先出</strong>的原则,即: <strong>先存入队列的数据,要先取出,后存入的要后取出</strong></p>
+</li>
+</ol>
+<hr>
+<h5 id="4-数组模拟环形队列"><a href="#4-数组模拟环形队列" class="headerlink" title="4.数组模拟环形队列"></a>4.数组模拟环形队列</h5><ul>
+<li>对前面的数组模拟队列的优化,充分利用数组,因此将数组看作是一个环形的.(通过<strong>取模的方式来实现</strong>即可)</li>
+</ul>
+<ol>
+<li>分析原因:<ul>
+<li>尾索引的下一个为头索引时表示队列满,即将队列容量空做出一个作为约定,这个在做判断队列满的时候需要注意(rear+1)%maxSize == front [满]</li>
+<li>rear == front[空]</li>
+<li>示意图:</li>
+</ul>
+</li>
+</ol>
+<p><img src="/.com//Users\ma\blogs\source\_posts\java数据与算法\队列2.png" alt></p>
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>java基础知识大复习</title>
+    <url>/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="java基础知识复习"><a href="#java基础知识复习" class="headerlink" title="java基础知识复习"></a>java基础知识复习</h1><h2 id="一-java基础"><a href="#一-java基础" class="headerlink" title="一.java基础"></a>一.java基础</h2><h4 id="1-计算机基础知识"><a href="#1-计算机基础知识" class="headerlink" title="1.计算机基础知识"></a>1.计算机基础知识</h4><ol>
+<li><p>计算机(Computer)全称：电子计算机，俗称==电脑==。计算机(Computer)全称：电子计算机，俗称电脑。由硬件和软件所组成,没有安装任何软件的计算机成为裸机。常见的形式有台式计算机、笔记本计算机、大型计算机等。</p>
+<a id="more"></a>
+</li>
+<li><p>Java语言发展史:1990年末，Sun公司预料嵌入式系统将会在未来家电领域大显身手，于是Sun公司成立了一个由James Gosling领导的Green计划，准备为下一代智能家电编写一个通用控制系统。<br>1992年夏天，Green计划已经完成了新平台的部分功能，包括Green操作系统、Oak的程序设计语言、类库等，后来由于一系列的原因Green项目差点儿夭折。<br>1994年夏天，互联网和浏览器的出现给Oak语言带来了新的生机。 James Gosling对Oak语言进行了小规模的改造，促进了第一个Java语言的浏览器WebRunner的产生。由于Oak商标已经被别人注册，Oak语言更名为Java。<br>==1995年，Sun公司在互联网公布Java源码。==<br>1996年Sun公司发布JDK1.0，包括两部分：运行环境（jre）和开发环境（JDK）。</p>
+</li>
+<li><p>Java语言平台版本:</p>
+<ol>
+<li>J2SE(Java 2 Platform Standard Edrtion)标准版<br>是为开发普通桌面和商务应用程序提供的解决方案<br>该技术体系是其他两者的基础，可以完成一些桌面应用程序的开发</li>
+<li>J2ME(Java 2 Platform Micro Edrtion)小型版<br>是为开发电子消费产品和嵌入式设备提供的解决方案</li>
+<li>J2EE(Java 2 Platform Enterprise Edrtion)企业版<br>是为开发企业环境下的应用程序提供的一套解决方案<br>该技术体系中包含的技术如servlet、Jsp等，主要针对于web应用程序的开发。</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-常见DOS命令"><a href="#2-常见DOS命令" class="headerlink" title="2.常见DOS命令"></a>2.常见DOS命令</h4><p>​    d: 回车   盘符切换<br>​    dir(directory):列出当前目录下的文件以及文件夹<br>​    md(make directory):创    建目录<br>​    rd(remove directory):删除目录<br>​    cd(change directory):改变指定目录（进入指定目录）<br>​    cd.：退回上一级目录<br>​    cd\：退回到根目录<br>​    del(delete):删除文件，删除一堆后缀名一样的文件<br>​    exit：退出DOS命令<br>​    cls(clear screen):清屏</p>
+<h4 id="3-Java语言特点"><a href="#3-Java语言特点" class="headerlink" title="==3.Java语言特点=="></a>==3.Java语言特点==</h4><ol>
+<li>简单性</li>
+<li>面向对象</li>
+<li>跨平台</li>
+<li>高能性</li>
+<li>多线程</li>
+<li>安全性</li>
+<li>解释性</li>
+</ol>
+<h4 id="4-Ascii码与数据类型"><a href="#4-Ascii码与数据类型" class="headerlink" title="4.Ascii码与数据类型"></a>4.Ascii码与数据类型</h4><ol>
+<li><p>a:97    A:65</p>
+</li>
+<li><p>java中按照占用空间的大小将整整数划分为4种不同的数据类型</p>
+<ol>
+<li>byte: 1byte = 8bit   保存的数值 -128~127<ol>
+<li>short: 1short = 2byte = 16bit     -32768~32767   短整型</li>
+<li>int:  1int = 32bit 整型  一个单独的数值,默认就是整型(int) </li>
+</ol>
+</li>
+<li><p>long: 1long = 64bit  长整型</p>
+</li>
+<li><p>boolean: 布尔型 true/false.boolean 不参与任何的数据类型转换 </p>
+</li>
+<li>double 8byte = 64位 一个单独小数默认是double</li>
+<li>float 4byte = 32位</li>
+</ol>
+</li>
+<li><p>数据类型:要运算,必须要先保存数据,要保存数据,先划分内存空间(通过数据类型开辟空间)</p>
+<pre><code>  将一定大小的数据保存到内存空间,如果保存的数据的大小超过了空间的范围就会报错
+       如果保存到内存空间的数据(的类型) 小于内存空间的大小,就会进行自动数据类型转换
+       如果超过内存空间的大小,就会报错,除非进行强制类型转换(缺点:丢失精度)
+</code></pre></li>
+</ol>
+<h4 id="5-JRE与JDK"><a href="#5-JRE与JDK" class="headerlink" title="5.JRE与JDK"></a>5.JRE与JDK</h4><ol>
+<li><p>JRE（Java Runtime Environment       Java运行环境）:</p>
+<p>包括<strong>Java虚拟机</strong>(JVM  Java Virtual Machine)和<strong>Java程序所需的核心类库</strong>等，如果想要运行一个开发好的Java程序，计算机中只需要安装JRE即可。</p>
+</li>
+<li><p>JDK(Java Development Kit     Java开发工具包)</p>
+<ul>
+<li><p>JDK是提供给Java开发人员使用的，其中包含了Java的开发工具，也包括了JRE。所以安装了JDK，就不用再安装JRE 了。</p>
+</li>
+<li><p>其中的开发工具：编译工具(javac.exe) 打开工具包(jar.exe)等。</p>
+</li>
+<li>简单而言：使用JDK开发完成的Java程序，交给JRE去运行。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-Java基础语法"><a href="#二-Java基础语法" class="headerlink" title="二.Java基础语法"></a>二.Java基础语法</h2><h4 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h4><ol>
+<li>变量: 就是有名字的内存空间</li>
+<li>目的: 为了内存空间的重复使用</li>
+<li>变量的声明: 数据类型划分内存空间</li>
+<li>“=”:赋值</li>
+<li>不能使用变量的情况:<ul>
+<li>不能使用一个没有赋值的变量    </li>
+<li>不能使用一个没有声明的变量</li>
+</ul>
+</li>
+<li>作用域: 在空间范围的划分,除了数据类型之外,还有更高级的划分<br>一个{}就是一个域,就会在内存中开辟出一块空间,而变量的作用范围(域),往上碰到的第一个大括号的内部往下会穿透所有的大括号(前提是在往上碰到的第一个大括号的内部)</li>
+<li><p>变量的分类:</p>
+<ul>
+<li>局部变量: 在方法中或者是代码段中声明的变量,作用域在这个方法/代码段中</li>
+<li><p>成员变量:     在类体中没有用static修饰的变量,作用域在这个对象中</p>
+</li>
+<li><p>静态变量(全局变量):  在类体中 用static修饰的变量,作用域在整个类中    </p>
+</li>
+<li>标识符命名规则: 大小写英文字母(a~z,A~Z),下划线_,美元符号$,数字 数字不能打头  关键词不能用来命名        </li>
+<li>在java中任何起名字的地方(项目名,包名/文件夹名,文件名,类名,方法名,变量名);</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2.运算符"></a>2.运算符</h4><p>1.注意 i++  ++i的区别</p>
+<ol>
+<li>i++:先赋值(用以前的值参与运算)再自身加1,    先去内存空间中,将i的值拿过用,用完之后对i进行+1,将+1之后的值再放到内存空间中去++i:先自身加1再赋值(参与运算)    </li>
+<li><p>关系运算符 : 结果为一个boolean类型的值   trur/false</p>
+<ul>
+<li>==:  如果两边是基本数据类型,比较两个值是否相等;如果两边是引用数据类型,比较的是内存地址是否相同    </li>
+<li>! : 非    去相反值(针对于boolean的值)     </li>
+<li>!= :  不等于</li>
+<li>三元运算符:    boolean值 ?  真值 : 假值    程序语句:有值有操作</li>
+</ul>
+</li>
+<li><p>即是算术运算符中的 加  求和操作符,也是字符串连接符<br>作用: 将两个字符串连接成一个字符串<br>只要在一个表达式中出现了字符串,那么字符串前后的 + 都是字符串连接符,并且将 + 前后的数据全部都会转化成字符串</p>
+</li>
+<li>switch 语句<br>javaSE1.7之前,这里只能传入一个整型值<br>javaSE1.8开始,可以传入字符串<br>switch(int类型):<br><strong>byte short char因为可以自动数据类型转换成int,所以随意传入</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//case合并</span></span><br><span class="line"><span class="keyword">switch</span>(s1)&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">"A"</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="string">"B"</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="string">"C"</span>:</span><br><span class="line">	System.out.println(<span class="string">"优秀"</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">"D"</span>:</span><br><span class="line">	System.out.println(<span class="string">"及格"</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	System.out.println(<span class="string">"不及格"</span>);</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-循环"><a href="#3-循环" class="headerlink" title="3.循环"></a>3.循环</h4><ol>
+<li><p>for循环:数个计数循环,在某个次数的范围之内,重复执行某段代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//循环三要素:</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>; 初始值</span><br><span class="line"><span class="comment">//循环执行100次之后终止循环  终止条件</span></span><br><span class="line"><span class="comment">//i++;  步长(每次增长多少)只要缺少任何一个条件,那么这个循环要不就是个错误的程序,要么就是个死循环</span></span><br><span class="line"><span class="keyword">for</span>(表达式a,表达式b,表达式c)&#123;	</span><br><span class="line">    java代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while循环是直接判断条件是否成立,有可能不执行</p>
+</li>
+<li><p>```java<br>do{</p>
+<pre><code>//java代码
+</code></pre><p>}while(boo)//先执行do里面的代码,在进行判断</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">4.</span> <span class="keyword">continue</span>: 不执行这一次循环,继续下一次循环,跳过本次循环</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> <span class="keyword">break</span>:终止循环程序</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> outFor:</span><br><span class="line"></span><br><span class="line">   ```java</span><br><span class="line">   outFor:<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">   			<span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">   				<span class="keyword">if</span> (j==<span class="number">3</span>) &#123;</span><br><span class="line">   					<span class="keyword">break</span> outFor;</span><br><span class="line">   				&#125;</span><br><span class="line">   				System.<span class="keyword">out</span>.print(j + <span class="string">"    "</span>);</span><br><span class="line">   			&#125;</span><br><span class="line">   			System.<span class="keyword">out</span>.println();</span><br><span class="line">   		&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+</ol>
+<h4 id="4-方法"><a href="#4-方法" class="headerlink" title="4. 方法"></a>4. 方法</h4><ol>
+<li>变量:有名字的内存空间      </li>
+<li>变量的目的:为了内存空间的重复使用      </li>
+<li>方法/函数:有名字的代码段({})</li>
+<li>相同类型功能/操作,没有必要重复写代码,只需要条用方法就可以</li>
+<li>方法的目的:为了代码的重复使用</li>
+<li>方法的声明:修饰符列表,返回值类型,方法名,参数列表,方法体     </li>
+<li>方法的执行:方法不调用不执行,调用才执行(必须直接或间接在main/主方法中调用,并将结果返回到方法调用处在调用的时候就会在栈内存中开栈帧(方法的内存空间)main方法是最先压栈的,最后弹栈的,main方法的弹栈表示程序的结束</li>
+<li>==方法的重载(OverLoad):同一个类中,方法名相同,参数列表不同的方法,叫做方法的重载==</li>
+<li>==程序 : 可执行的文件,是一个 静态概念,保存在计算机的硬盘==</li>
+<li>==进程 : 正在运行的程序==</li>
+<li>内存分为四大部分:<ul>
+<li>静态代码段: 存放程序文件(.class类文件),当访问类的静态属性的时候被加载            </li>
+<li>栈内存 : 一个数据结构为模型的一段内存空间,栈帧 保存在栈里面的元素        </li>
+<li>堆内存: 用来存放静态代码段中.class类文件的对象            </li>
+<li>静态数据区: 用来存放软件生命周期中一些常量以及需要全局使用的变量(静态变量)</li>
+</ul>
+</li>
+</ol>
+<h2 id="三-面向对象"><a href="#三-面向对象" class="headerlink" title="三.面向对象"></a>三.面向对象</h2><h4 id="1-类对象之间的6种关系"><a href="#1-类对象之间的6种关系" class="headerlink" title="1.类对象之间的6种关系"></a>1.类对象之间的6种关系</h4><ul>
+<li>继承 </li>
+<li>实现 </li>
+<li>依赖:局部变量是另外一个类对象的引用 </li>
+<li>关联:成员变量是另外一个类对象的引用 </li>
+<li>聚合:类中的集合中的元素是另外一个类对象的引用 </li>
+<li>组合</li>
+</ul>
+<h4 id="2-实例化是什么"><a href="#2-实例化是什么" class="headerlink" title="2.实例化是什么?"></a>2.实例化是什么?</h4><ol>
+<li><p>代码角度说:new 实例化某一个类的实例,封装特有的数据,就是对象</p>
+</li>
+<li><p>数据角度说:封装数据和逻辑的一种方法(数据就是指成员变量,逻辑就是指成员方法)</p>
+</li>
+<li>人类认知角度:对象就是具体的某一个物体,或者某一个东西,一切皆文件,一切皆对象</li>
+<li><p>属性分两种: </p>
+<ol>
+<li>静态属性  动态属性</li>
+<li>静态属性: 固定的属性值,就是每个对象都有的属性和值</li>
+<li>动态属性: 是指这个类的对象的行为和功能</li>
+</ol>
+</li>
+<li><p>实例化创建对象: 类名 变量名 = new 构造方法();</p>
+<ul>
+<li><p>先把相关类加载到静态代码段,(类在访问他的静态属性的时候被加载)</p>
+</li>
+<li><p>调用有构造方法(在栈内存开辟栈帧),在堆内存中开辟内存空间</p>
+</li>
+<li><p>把类中的成员属性(变量 方法)复制一份到堆内存中开辟的空间.通过构造方法给堆内存中的成员变量赋值,如果不复制就会赋默认值,构造方法弹栈</p>
+</li>
+<li><p>把内存的内存地址  赋值给栈内存中的局部变量 student</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-类中可有有什么"><a href="#3-类中可有有什么" class="headerlink" title="==3.类中可有有什么=="></a>==3.类中可有有什么==</h4><ol>
+<li>构造方法: 构造方法有双重属性,用来创建对象</li>
+<li><p>成员方法: 对象级别,通过对象.成员方法名,每个对象都有的方法</p>
+</li>
+<li><p>静态方法: 类级别的,通过类名.静态方法名;还可以通过对象.静态方法名,底层会转换成类名</p>
+</li>
+<li><p>静态变量: 类级别的,通过类名.静态变量名;对象.静态变量名,属于全局变量,保存在静态数据区</p>
+</li>
+<li><p>成员变量: 对象级别,通过对象.成员变量名,保存在对象中(堆内存),每个对象都会保存一份成员属性</p>
+</li>
+<li><p>静态代码段/静态语句块: 在类体中用static修饰的大括号  在类加载的时候执行</p>
+</li>
+<li><p>动态代码段/动态语句块: 在类体中不用static修饰的大括号, 在每次调用构造方法之前执行</p>
+</li>
+<li><p>this: 就是我这个对象</p>
+</li>
+<li><p>super: 父类对象私有的属性,在外部无法直接访问/给私有属性赋值,可以通过setXXX方法/获取类中的私有变量,可以通过getXXX方法</p>
+</li>
+</ol>
+<h4 id="4-面试题"><a href="#4-面试题" class="headerlink" title="4.面试题"></a>4.面试题</h4><ol>
+<li><p>java的四大特性:</p>
+<ol>
+<li>跨平台/面向对象/多线程/垃圾自动回收机制</li>
+</ol>
+</li>
+<li><p>面向对象四大特性:</p>
+<ol>
+<li>封装 继承 抽象 多态</li>
+</ol>
+</li>
+</ol>
+<h4 id="5-static"><a href="#5-static" class="headerlink" title="5.static"></a>5.static</h4><ol>
+<li>this关键: 每个对象中保存自身内存地址的一个引用数据类型的成员变量</li>
+<li>this就是当前对象的引用(this在成员方法中,那个对象调用这个成员符,this就代表这个对象)</li>
+<li><p>==this的用法==:</p>
+<ol>
+<li>this用在成员方法中,用来区分成员变量和局部变量</li>
+<li>this用在构造方法中(带小括号),用来调用另外的构造方法,用于提高代码的重用性</li>
+<li>通过this(实参)这种方式调用构造方法不会创建出类的对象</li>
+<li>==只有通过new  构造方法才能创建出类的对象==</li>
+<li>==this(实参)  必须放在构造方法的第一行,并且只能在构造方法里面调用其他的构造方法,this()和super()只能有一个存在==</li>
+<li>==this能用在静态方法中吗?静态上下文无法访问非静态属性(this 是成员变量)==</li>
+</ol>
+</li>
+<li><p>static修饰符: 修饰: 静态变量,静态方法,静态代码段</p>
+</li>
+<li><p>main方法是静态方法,当调用这个main方法的时候就访问这个类的静态属性的时候,就会把类加载到内存 <strong>静态代码段,在类加载的时候执行</strong></p>
+</li>
+<li><p>java运行顺序:</p>
+<p>静态代码段——&gt;main——&gt;实例语句块——&gt;构造方法——&gt;静态/成员方法</p>
+</li>
+</ol>
+<h4 id="6-package软件包"><a href="#6-package软件包" class="headerlink" title="6.package软件包"></a>6.package软件包</h4><pre><code>1. 软件包机制:
+  1,为了解决命名冲突问题,在类名前加命名空间(包机制)
+  2,在java中使用package语句定义包
+  3,package语句只能出现在,java源文件的第一行,指的是源文件有意义代码的第一行
+  例子:com.rs.oa.system
+  以上包含义:rs公司研发的oa项目,system是oa项目中的一个模块
+  package定义的全格式:公司域名倒叙.项目名.模块名
+  完整的类名是带有包名的
+2.java.lang是java的核心包,核心包不用导包,其他所有的类,都必须导入才能用
+</code></pre><h4 id="7-继承"><a href="#7-继承" class="headerlink" title="7.继承"></a>7.继承</h4><p>==C语言是环式继承,多继承==</p>
+<p>==java中是单继承,一个类只能继承一个类==</p>
+<ol>
+<li><p>方法为了代码的重用,调用一次方法就重复使用一次方法中的代码</p>
+</li>
+<li><p>变量为了内存空间的重用,调用一次变量就重复使用一次内存空间</p>
+</li>
+<li><p>循环为了逻辑代码的重用,循环一次,执行一次循环体中的代码</p>
+</li>
+<li><p>继承为了类的重复使用,子类继承父类,父类的代码就复用了</p>
+</li>
+<li>类:封装了逻辑和数据</li>
+</ol>
+<h5 id="7-1类中都可以有什么"><a href="#7-1类中都可以有什么" class="headerlink" title="7.1类中都可以有什么?"></a>7.1类中都可以有什么?</h5><ol>
+<li><p>静态变量和静态方法能被继承吗?</p>
+<ul>
+<li><strong>静态的属于全局的,属于类级别,子类可以调用,但是不是继承</strong></li>
+<li>静态的不能被继承,继承是个动态的概念,类只是一个标准,==真正的继承关系的是类的实例化对象==,特指对象和对象之间的关系而静态属性属于类级别,子类对象可以直接用,但不继承</li>
+</ul>
+</li>
+<li><p>构造方法能被继承吗?</p>
+<ul>
+<li><strong>不能</strong>,构造方法用来创建对象,如果子类继承父类的构造方法,那么调用子类的构造方法创建出来的对象,不能确定是谁的,</li>
+<li><strong>所以构造方法不能用来继承局部变量?</strong>局部变量是跟着这个方法走,如果方法被继承,那么就被继承,方法不能被继承,那么就不继承继承指对象和对象之间的继承,那么属于对象才有这么一说继承特指成员属性的继承</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="8-复写"><a href="#8-复写" class="headerlink" title="8.复写"></a>8.复写</h4><ul>
+<li><p>OverLoad 方法的重载</p>
+</li>
+<li><p>Override 方法的覆写  复写  重写</p>
+</li>
+</ul>
+<hr>
+<ol>
+<li>再细说他们是什么?<ol>
+<li>OverLoad: 在同一个类中,方法名相同,参数列表不同的方法,方法的重载</li>
+<li>Override:在有继承关系的体系中,方法名相同,参数列表也相同,返回值也相同的方法,不能有更低的访问权限,不能比父类的方法有更广泛的异常</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h4 id="9-Super"><a href="#9-Super" class="headerlink" title="9.Super"></a>9.Super</h4><ol>
+<li>super : 官方说法  子类通过super保存了父类型的特征</li>
+<li>this : 保存自身内存地址的一个引用类型的成员变量</li>
+<li>在有继承关系的体系中,子类用super保存了父类的对象的引用</li>
+<li><p>super关键字用法:</p>
+<ul>
+<li>在子类的构造方法中  通过super(实参),调用父类的构造方法,(通过super()这种方式不会创建出父类对象)    </li>
+<li>只有最终调用到Object的无参构造才会创建出对象,所以在子类的每个构造方法中第一行都会默认有一个super() 去调用父类的构造方法</li>
+<li>super(实参),必须放在构造方法的第一行,而this(实参) 也必须放在构造方法的第一行,所以构造方法中this()/super() 只能出现一个</li>
+<li>super代表了父类型的特征(属性列表)</li>
+<li>super 不是引用数据类型,super中保存的也不是父类对象的内存地址,super也不是父类的对象</li>
+</ul>
+</li>
+<li><p>super可以用在什么地方</p>
+<ul>
+<li>可以用在构造/成员方法中,不可以用在静态方法中</li>
+</ul>
+</li>
+<li><p>什么时候使用super?</p>
+<ul>
+<li>和this的用法一样,在子类中可以通过super.成员属性,调用父类的成员变量/方法<ul>
+<li>在子类中需要调用父类的方法/变量的时候,可以通过super.成员变量名  super.成员方法名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="10-构造器与构造方法"><a href="#10-构造器与构造方法" class="headerlink" title="10.构造器与构造方法"></a>10.构造器与构造方法</h4><ol>
+<li>什么是构造方法: <ol>
+<li>默认是公共的  静态的  没有返回值  方法名和类名相同,但是不能用static和void修饰</li>
+<li>构造方法用来创建类的实例化对象</li>
+<li>每个类中都默认有一个无参构造,但是如果自己定义一个构造(无论有参还是无参),默认的就没有了,在写实体类的时候   建议自己写一个无参  一个全参</li>
+<li>构造方法可以重载吗?           构造方法可以重载n个</li>
+<li>构造方法的调用:<ol>
+<li>通过new 构造方法名();</li>
+<li>通过super(实参) ,在子类的构造方法中,调用父类的构造方法</li>
+<li>通过this(实参),在自己的构造方法中调用其他的构造方法</li>
+<li><strong>构造方法私有化,主要用于单例模式</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h4 id="11-final"><a href="#11-final" class="headerlink" title="11.final"></a>11.final</h4><ol>
+<li>含义:最后的,最终的,不可更改的,用fianl修饰的内存空间不可以在改变</li>
+<li>final 修饰的:</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成员方法</td>
+<td>不能被覆写,可以被继承</td>
+</tr>
+<tr>
+<td>局部变量</td>
+<td>不能二次赋值</td>
+</tr>
+<tr>
+<td>成员变量</td>
+<td><strong>成员变量不会再赋默认值</strong>,不能二次赋值,必须显示的赋值,要么在构造方法中都有赋值的语句存在</td>
+</tr>
+<tr>
+<td>静态变量</td>
+<td>常量</td>
+</tr>
+<tr>
+<td>类</td>
+<td>不能被继承</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><p>用final修饰的引用类型的变量:他的值不能再改变,也就是指向的堆内存的空间的地址不能在改变,但是内存空间中成员变量的,可以被改变</p>
+</li>
+<li><p>类与类之间访问权限 : 权限控制修饰符</p>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>protected</th>
+<th>default</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当前类同一个包</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>当前包不同类</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>当前包有继承关系</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>当前包没有继承关系</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>不同包有继承关系</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>不同包没有继承关系</td>
+<td>可以</td>
+<td>不可以</td>
+<td>不可以</td>
+<td>不可以</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h4 id="12-单例模式"><a href="#12-单例模式" class="headerlink" title="12.单例模式"></a>12.单例模式</h4><ol>
+<li>饿汗模式:    <strong>这两种都是在类加载的时候就执行</strong><ul>
+<li>直接在变量声明的时候就创建对象</li>
+<li>在静态代码段中创建对象</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//静态的,私有的,当前类类型的静态变量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton_01 singleton_01 = <span class="keyword">new</span> Singleton_01();</span><br><span class="line"><span class="comment">//private static Singleton_01 singleton_01;</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//	static&#123;</span></span><br><span class="line"><span class="comment">//		singleton_01 = new Singleton_01();</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">    <span class="comment">//构造方法私有化</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton_01</span><span class="params">()</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//提供一个让外部获取当前类对象的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton_01 <span class="title">getSingleton_01</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> singleton_01;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>懒汉模式</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton_02</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton_02 singleton_02;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton_02</span><span class="params">()</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton_02 <span class="title">getSingleton_02</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (singleton_02 == <span class="keyword">null</span>) &#123;</span><br><span class="line">			singleton_02 = <span class="keyword">new</span> Singleton_02();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> singleton_02;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>设计者模式<ul>
+<li>很多经常用到的代码,总结出了一套固定的写法,这就是设计者模式 </li>
+<li>单例模式是23种设计者模式中最简单的一种</li>
+<li>单例模式:在某些需要担对此初始化同一个对象的应用中,为了保证初始化的对象是同一个对象,为了节约内存</li>
+<li>步骤 :<ul>
+<li><strong>构造方法私有化</strong>,外部无法通过new构造方法的方式创建出类对象</li>
+<li>创建一个<strong>私有的,静态的</strong>,当前类类型的静态变量,用于装载当前类的对象</li>
+<li>提供一个公共的,静态的  用于获取当前类对象的方法</li>
+<li>根据实例化当前类对象的时间,将单例模式分为两种:<ul>
+<li>在类加载的时候就创建出类对象     叫   饿汉模式</li>
+<li>当客户端需要用到这个对象的时候,才创建这个类对象     叫   懒汉模式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="13-多态"><a href="#13-多态" class="headerlink" title="13.多态"></a>13.多态</h4><ol>
+<li><p>jvm四大特性:</p>
+<ul>
+<li>面向对象</li>
+<li>垃圾自动回收机制</li>
+<li>多线程</li>
+<li>跨平台</li>
+</ul>
+</li>
+<li><p>面向对象四大特性</p>
+<ul>
+<li>封装</li>
+<li>继承</li>
+<li>抽象</li>
+<li>多态</li>
+</ul>
+</li>
+<li><p>多态的概念 : 父类引用指向子类对象</p>
+<ul>
+<li>父类型开辟内存空间    命名    =    new    子类对象</li>
+<li><strong>如果父类有,那么再去父类中去找继承覆写之后的方法,如果子类有,就用子类的,如果子类没有,就用父类的,如果父类没有,不管子类有没有,调用就会报错</strong></li>
+<li>里式替换原则:<ul>
+<li>能使用父类的地方一定可以使用子类</li>
+<li>多态就是里氏替换原则的一种体现</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li>多态的前提: 有继承关系的两个类</li>
+<li>哪里可以有多态?   哪里有变量,哪里就可以有多态</li>
+<li>形参列表声明用父类,实参传入子类对象</li>
+<li>编译阶段:父类文件有,子类文件也有,子类对象有吗?没有,因为没有运行,但是这个时候我们已经定义了,多态,编译器会按照父类文件,生成一个父类的属性列表,就会按照父类型来说明内存空间的划分,只是说明,还没有划分;这是只有父类的属性列表,由于程序没有运行,也就不知道子类具体有什么属性,也就不能使用子类特有的属性,也就是说,多态会丢失子类的特有的属性</li>
+<li>要访问子类特有的属性,必须<strong>向下转型</strong>(前提必须是向上转型之后才能向下转型),可以看做强制类型转换</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">		Animal animal = <span class="keyword">new</span> Cat();</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		animal.eat();</span></span><br><span class="line"><span class="comment">////		animal.move();</span></span><br><span class="line"><span class="comment">//		int i = 10;</span></span><br><span class="line"><span class="comment">////		byte b = (byte)i;</span></span><br><span class="line"><span class="comment">//		//向下转型(强制类型转换)</span></span><br><span class="line"><span class="comment">//		Cat cat = (Cat)animal;</span></span><br><span class="line"><span class="comment">//		//向下转型之后,访问子类对象特有的属性</span></span><br><span class="line"><span class="comment">//		cat.move();</span></span><br><span class="line"><span class="comment">//		</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//		 java.lang.ClassCastException 类型转换异常</span></span><br><span class="line">		<span class="comment">//向下转型是存在风险的,将cat向上转型之后,只能将转型后的对象  再向下转型程当前cat类,不能转换成dog类</span></span><br><span class="line"><span class="comment">//		Dog dog = (Dog)animal;</span></span><br><span class="line"><span class="comment">//		dog.cry();</span></span><br><span class="line">		<span class="comment">//instanceof   用来判断对象是否由某各类实例化而来</span></span><br><span class="line">		System.out.println(animal <span class="keyword">instanceof</span> Dog);</span><br><span class="line">		System.out.println(animal <span class="keyword">instanceof</span> Cat);</span><br><span class="line">		<span class="keyword">if</span> (animal <span class="keyword">instanceof</span> Cat) &#123;</span><br><span class="line">			Cat c = (Cat)animal;</span><br><span class="line">			c.move();</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span> (animal <span class="keyword">instanceof</span> Dog) &#123;</span><br><span class="line">			Dog dog = (Dog)animal;</span><br><span class="line">			dog.cry();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="13-抽象"><a href="#13-抽象" class="headerlink" title="13.抽象"></a>13.抽象</h4><ol>
+<li>abstract 抽象的<ul>
+<li>抽象类    :     用Abstract修饰的类,可以没有抽象方法,用来被继承</li>
+<li>抽象方法:     用Abstract修饰并且没有方法体的方法,一定在抽象类中,用于被子类重写/覆写/实现</li>
+<li>抽象类不能被实例化,但是有构造方法,用于子类实例化时,调用</li>
+<li>实现抽象方法, 就是将父类中的抽象方法进行覆写,把Abstract去掉,加上方法体</li>
+<li>一个类能同时被final和Abstract修饰吗?抽象方法能被fianl修饰吗?</li>
+<li>用fianl修饰的类不能被继承,而Abstract修饰的类就是为了被继承,类不能被他俩同时修饰</li>
+<li>用final修饰的成员方法不能被覆写,而用Abstract修饰的方法(抽象方法)就是为了被覆写/实现,所以也不能同时修饰</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="14-接口"><a href="#14-接口" class="headerlink" title="14.接口"></a>14.接口</h4><ol>
+<li>引用数据类型 : 类      接口      数组</li>
+<li>接口 : 可以看做是一个特殊的类,完全抽象的类,里面只有抽象方法,变量只有常量</li>
+<li>为什么要有接口 : 由于java中继承是单继承,引入的一种特殊的类(接口),类可以实现多种接口</li>
+<li>接口的声明 : [修饰符]  interface  接口名  {接口体/类体}</li>
+<li>在继承的时候,把继承改成了实现,将extends换成了implements,但是,接口与接口之间还是继承</li>
+<li>接口没有构造方法,接口不能被实例化</li>
+<li>一个类可以继承一个类,但是可以实现多个接口</li>
+<li>接口与接口:  多继承      类与接口    :  多实现      类与类        :  单继承</li>
+<li><strong>面试题:abstract 和  interface的区别:</strong><ul>
+<li>abstract是修饰符 抽象的,用abstract修饰类是抽象类,修饰的方法是抽象方法</li>
+<li>interface是定义接口的关键字,通过  [修饰符] interface 接口名</li>
+<li>抽象类中可以没有抽象方法,但是抽象方法一定在抽象类中,接口是个完全抽象的抽象类,里面只有抽象方法和常亮</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="15-内部类"><a href="#15-内部类" class="headerlink" title="15.内部类"></a>15.内部类</h4><ol>
+<li><p><strong>成员内部类</strong>:  不用static修饰的内部类</p>
+<ol>
+<li>成员内部类中不可以静态属性的声明</li>
+<li>成员内部类可以访问外部类的所有属性</li>
+<li>可以等同看作是成员变量</li>
+<li>成员内部类中<strong>不可以声明静态属性</strong></li>
+</ol>
+</li>
+<li><p><strong>静态内部类:</strong>用static修饰的内部类</p>
+<ol>
+<li>等同看作静态变量</li>
+<li>静态内部类中不可以访问外部类中的成员属性</li>
+<li>静态内部类中可以声明所有的属性</li>
+<li>内部类类名: _02_OuterClass$InnerClass.class 和成员内部类一样</li>
+</ol>
+</li>
+<li><p><strong>局部内部类 </strong>: 等同看做局部变量</p>
+<ol>
+<li>局部内部类不可以加  public private protected static 修饰局部内部类</li>
+<li>局部内部类中不可以声明静态属性</li>
+</ol>
+</li>
+<li><p><strong>匿名内部类:</strong>没有名字的内部类</p>
+<ol>
+<li>如果一个方法的形参变量是个接口类型的变量,在方法调用的时候,传入的参数可以是其实现类的对象,还可以直接 new接口的实现类 == 匿名内部类</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="四-数组"><a href="#四-数组" class="headerlink" title="四.数组"></a>四.数组</h2><h4 id="1-数组基础"><a href="#1-数组基础" class="headerlink" title="1.数组基础"></a>1.数组基础</h4><ol>
+<li><p>数组是什么?: </p>
+<p>​        数组可以看做是多个相同数据类型的一个存储容器,可以对数据进行统一的管理在java中数组是一个连续的线性结构的一段内存空间,java.util.Array类,用来操作数组的类,不是数组</p>
+</li>
+<li><p>数组保存数据的特征:</p>
+<ul>
+<li>是一种引用数据类型</li>
+<li>是一段连续的线性的数据结构</li>
+<li>是一个容器(内存空间),用来存放数据</li>
+<li>数组的长度不能更改,也就是说,数组一旦声明,这个数组里面保存的元素个数就不能改变</li>
+<li>数组可以存放任意的类型和数据,但是每一位数组中只能存放同一种数据(数组可以是多维)</li>
+</ul>
+</li>
+<li><p>数组的声明:</p>
+<ul>
+<li><p><strong>静态声明</strong>:在预先知道数组里面要存放什么数据的时候,通过数据类型开辟出合适的空间,直接把数据放进去</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据类型[] 变量名 = &#123;数组元素&#125;;</span></span><br><span class="line">	<span class="keyword">int</span> [] i = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>动态声明</strong>:在预先知道数组中要保存的数据的个数,但是具体的值不知道,那么这个时候我们就可以使用数据类型开辟出合适的空间,然后使用这个数据类型的默认值去占位</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] i1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li>数组的特性:<ul>
+<li>每个单独数组中的元素数据类型必须是统一的,数据类型的统一意味着每个数据的内存空间中的大小是一样的</li>
+<li>数组是<strong>引用数据类型</strong>,那就意味着要占用两块内存空间;要查找某个元素的时候,只需要首元素的内存地址加上偏移量即可(通过首内存地址,加上偏移量,快速计算出要查找元素的内存地址,从而取得元素),<strong>由于通过内存直接查找,所以效率极高</strong></li>
+<li>对于数组中数据的处理:增———改,查<ul>
+<li>所以结合数组的特性,查找,更改,效率极高,但是增,删,需要保证元素的有序,改元素位以后的数据位都需要向前或者向后一位操作,所以很慢</li>
+<li>实际上没有移位,是直接开辟新的空间,然后把每个元素复制进去);数组中默认有length这个属性存在 , length返回数组的长度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li>java中提供的一个数组复制的方法:这种是替换式复制<ul>
+<li>int[] src = {2,3,4,5,6,7,8,9,10,11,12};</li>
+<li>int[] dest = {11,12,13,14,15,16,17,18};</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//前面替换后面</span></span><br><span class="line">System.arraycopy(src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2.冒泡排序"></a>2.冒泡排序</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//比较相邻的两个元素,如果第一个比第二个大,就交换他们</span></span><br><span class="line"><span class="comment">//每一对相邻元素做同样的工作,从开始第一对到最后一对,也就意味着当一轮比较结束之后最后一个元素应该是最大的那个数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buddleSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">		<span class="comment">//int tmp;</span></span><br><span class="line">		<span class="comment">//外层循环用来比较的循环次数(循环一次比较一轮)</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; a.length;i++)&#123;</span><br><span class="line">			<span class="comment">//int tmp;</span></span><br><span class="line">			<span class="comment">//内层循环用来比较相邻的元素</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; a.lengrh-<span class="number">1</span>-i;j++)&#123;</span><br><span class="line">			<span class="comment">//如果前一位比后一位的值大,就将两个数位置互换</span></span><br><span class="line">			<span class="keyword">if</span>(a[j] &gt; a[j+<span class="number">1</span>])&#123;</span><br><span class="line">			     <span class="keyword">int</span> tmp = a[j];</span><br><span class="line">			     a[j] = a[j+<span class="number">1</span>];</span><br><span class="line">			     a[j+<span class="number">1</span>] = tmp;</span><br><span class="line">			&#125;	</span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//不是冒泡</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; a.length;i++)&#123;<span class="comment">//第一位数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; a.length;j++)&#123;<span class="comment">//第二位数</span></span><br><span class="line">			<span class="keyword">if</span>(a[i] &gt; a[j])&#123;</span><br><span class="line">				<span class="keyword">int</span> tmp	= a[i];</span><br><span class="line">				a[i] = a[j];</span><br><span class="line">				a[j] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-二分法查找"><a href="#3-二分法查找" class="headerlink" title="3.二分法查找"></a>3.二分法查找</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//是建立在已经排好序的基础之上</span></span><br><span class="line"><span class="comment">//数据里没有重复的元素</span></span><br><span class="line"><span class="comment">//算法实现:</span></span><br><span class="line"><span class="comment">//1.确定数据的开始和位置结束</span></span><br><span class="line"><span class="comment">//2.确定数据中间位置,判断中间位置数据是否为目标数据,如果是,直接返回该数的下标</span></span><br><span class="line"><span class="comment">//3.如果不是,看数据和中间和中间位置数据的大小,如果大,前边的数直接切掉,和中间位置的数后面的数进行比较</span></span><br><span class="line">例子:<span class="keyword">int</span>[] a = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">102</span>,<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">19</span>,</span><br><span class="line">				<span class="number">38</span>, <span class="number">41</span>, <span class="number">52</span>, <span class="number">100</span>, <span class="number">73</span>, <span class="number">78</span>, <span class="number">79</span>, <span class="number">80</span>, <span class="number">81</span>, <span class="number">82</span>, <span class="number">83</span>, <span class="number">84</span>, <span class="number">85</span>, <span class="number">86</span>, <span class="number">87</span>, <span class="number">88</span>,</span><br><span class="line">				<span class="number">89</span>, <span class="number">90</span>, <span class="number">99</span>, <span class="number">100</span> ,<span class="number">101</span>&#125;;</span><br><span class="line">			<span class="comment">//二分法查找</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">				<span class="comment">//数组的起始下标</span></span><br><span class="line">				<span class="keyword">int</span> go = <span class="number">0</span>;</span><br><span class="line">				<span class="comment">//数组的结束下标</span></span><br><span class="line">				<span class="keyword">int</span> end = a.length-<span class="number">1</span>;</span><br><span class="line">				<span class="comment">//数组中间下标</span></span><br><span class="line">				<span class="keyword">int</span> center = (go + end)/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">while</span>(go &lt;= end)&#123;</span><br><span class="line">					<span class="keyword">if</span>(num == a[center])&#123;</span><br><span class="line">					    <span class="keyword">return</span> center;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(num &gt; a[center])&#123;</span><br><span class="line">					    go = center+<span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(num &lt; a[center])&#123;</span><br><span class="line">					    end = center-<span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					center = (go + end)/<span class="number">2</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>入门markdown.md</title>
+    <url>/2020/01/10/%E5%85%A5%E9%97%A8markdown/</url>
+    <content><![CDATA[<h1 id="Markdown快速入门-typora"><a href="#Markdown快速入门-typora" class="headerlink" title="Markdown快速入门(typora)"></a>Markdown快速入门(typora)</h1><h2 id="1、代码块"><a href="#1、代码块" class="headerlink" title="1、代码块:"></a>1、代码块:</h2><a id="more"></a>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//代码块语法:</span></span><br><span class="line">​```java</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"> ```shell</span><br></pre></td></tr></table></figure>
+<p><strong>1.java代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>2.shell脚本</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2、标题"><a href="#2、标题" class="headerlink" title="2、标题:"></a>2、标题:</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3、字体"><a href="#3、字体" class="headerlink" title="3、字体"></a>3、字体</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//加粗</span></span><br><span class="line">**等不到天黑**</span><br><span class="line"><span class="comment">//代码高亮显示</span></span><br><span class="line">==我不是黄蓉==</span><br><span class="line"><span class="comment">//删除线</span></span><br><span class="line">~~被删除的文字~~</span><br><span class="line"><span class="comment">//斜体</span></span><br><span class="line">*斜体内容*</span><br></pre></td></tr></table></figure>
+<p><strong>等不到天黑</strong></p>
+<p><del>被删除的文字</del><br><em>斜体内容</em></p>
+<p>==我不是黄蓉==</p>
+<h2 id="4、引用"><a href="#4、引用" class="headerlink" title="4、引用:"></a>4、引用:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//引用语法</span></span><br><span class="line">&gt;作者:叶忠仁</span><br><span class="line">&gt;&gt;作者:叶忠仁</span><br><span class="line">&gt;&gt;&gt;作者:叶忠仁</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>作者:叶忠仁</p>
+<blockquote>
+<p>作者:叶忠仁</p>
+<blockquote>
+<p>作者:叶忠仁</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5、分割线"><a href="#5、分割线" class="headerlink" title="5、分割线:"></a>5、分割线:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//分割线</span></span><br><span class="line">---</span><br><span class="line"><span class="comment">//分割线2</span></span><br><span class="line">***</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2 id="6-、图片插入"><a href="#6-、图片插入" class="headerlink" title="6.、图片插入:"></a>6.、图片插入:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在线图片/本地图片</span></span><br><span class="line">![我的图片名](/image/me.png) --图片路径</span><br></pre></td></tr></table></figure>
+<p><img src="https://dss0.bdstatic.com/6Ox1bjeh1BF3odCf/it/u=733717429,363003047&amp;fm=74&amp;app=80&amp;f=JPEG&amp;size=f121,140?sec=1880279984&amp;t=e781cf317a6ac72636fe1430c476d8aa" alt="我的图片"></p>
+<h2 id="7、超链接"><a href="#7、超链接" class="headerlink" title="7、超链接:"></a>7、超链接:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//超链接语法</span></span><br><span class="line">[我的GitHub](https:<span class="comment">//github.com/yeziyouxuan/yeziyouxuan.github.io)</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/yeziyouxuan/yeziyouxuan.github.io" target="_blank" rel="noopener">我的GitHub</a></p>
+<h2 id="8、列表"><a href="#8、列表" class="headerlink" title="8、列表:"></a>8、列表:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//有序列表</span></span><br><span class="line">- 目录<span class="number">1</span></span><br><span class="line">- 目录<span class="number">2</span></span><br><span class="line">- 目录<span class="number">3</span></span><br><span class="line"><span class="comment">//有序列表</span></span><br><span class="line"><span class="comment">// 1+. +名称</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>目录1</li>
+<li>目录2</li>
+<li>目录3</li>
+</ul>
+<ol>
+<li>你好</li>
+<li>您好</li>
+<li>你们好</li>
+</ol>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格:"></a>9.表格:</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>数学</th>
+<th>语文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+  </entry>
+</search>
