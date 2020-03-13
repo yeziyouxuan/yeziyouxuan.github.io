@@ -89,14 +89,19 @@
 
 
 
-<meta name="description" content="我是叶子,希望我的博客能给你带来一些帮助">
-<meta property="og:type" content="website">
-<meta property="og:title" content="叶子优选">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="一、Hibernate框架1.hibernate入门 Hibernate:是一个开放源代码的对象关系映射框架;对JDBC进行了非常轻量级的对象封装;它将POJO与数据库表建立映射关系，是一个全自动的orm框架,hibernate可以自动生成SQL语句，自动执行,跨数据库； hibernate配置文件：主配置文件： 1个     连接数据库信息；hibernate运行参数,指定映射文件的位置 映射文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java高级">
+<meta property="og:url" content="http://yoursite.com/2020/02/16/java%E9%AB%98%E7%BA%A7/index.html">
 <meta property="og:site_name" content="叶子优选">
-<meta property="og:description" content="我是叶子,希望我的博客能给你带来一些帮助">
+<meta property="og:description" content="一、Hibernate框架1.hibernate入门 Hibernate:是一个开放源代码的对象关系映射框架;对JDBC进行了非常轻量级的对象封装;它将POJO与数据库表建立映射关系，是一个全自动的orm框架,hibernate可以自动生成SQL语句，自动执行,跨数据库； hibernate配置文件：主配置文件： 1个     连接数据库信息；hibernate运行参数,指定映射文件的位置 映射文">
+<meta property="og:image" content="http://yoursite.com/.com//Users/Administrator/blogs/source/_posts/java%E9%AB%98%E7%BA%A7/QQ%E6%88%AA%E5%9B%BE20200313153745.png">
+<meta property="og:image" content="http://yoursite.com/.com//Users/Administrator/blogs/source/_posts/java%E9%AB%98%E7%BA%A7/QQ%E6%88%AA%E5%9B%BE20200313153900.png">
+<meta property="article:published_time" content="2020-02-16T09:22:12.000Z">
+<meta property="article:modified_time" content="2020-03-13T07:40:33.575Z">
 <meta property="article:author" content="叶子">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//Users/Administrator/blogs/source/_posts/java%E9%AB%98%E7%BA%A7/QQ%E6%88%AA%E5%9B%BE20200313153745.png">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/16/java高级/"/>
 
 
 
 
 
-  <title>叶子优选</title>
+  <title>java高级 | 叶子优选</title>
   
 
 
@@ -151,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,178 +293,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叶子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wofour.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="叶子优选">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/19/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-19T08:59:07+08:00">
-                2020-01-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/19/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/19/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  73 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -490,9 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/java%E9%AB%98%E7%BA%A7/" itemprop="url">java高级</a></h1>
+          <h1 class="post-title" itemprop="name headline">java高级</h1>
         
 
         <div class="post-meta">
@@ -533,6 +366,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -583,9 +421,7 @@
       
 
       
-        
-          
-            <h2 id="一、Hibernate框架"><a href="#一、Hibernate框架" class="headerlink" title="一、Hibernate框架"></a>一、Hibernate框架</h2><h5 id="1-hibernate入门"><a href="#1-hibernate入门" class="headerlink" title="1.hibernate入门"></a>1.hibernate入门</h5><ol>
+        <h2 id="一、Hibernate框架"><a href="#一、Hibernate框架" class="headerlink" title="一、Hibernate框架"></a>一、Hibernate框架</h2><h5 id="1-hibernate入门"><a href="#1-hibernate入门" class="headerlink" title="1.hibernate入门"></a>1.hibernate入门</h5><ol>
 <li>Hibernate:是一个开放源代码的<strong>对象关系映射</strong>框架;对JDBC进行了非常<strong>轻量级</strong>的对象封装;它将POJO与数据库表建立映射关系，是一个全自动的orm框架,hibernate可以自动生成SQL语句，自动执行,跨数据库；</li>
 <li><p>hibernate配置文件：主配置文件： 1个   </p>
 <ul>
@@ -803,8 +639,6 @@
 <p><img src="/.com//Users\Administrator\blogs\source\_posts\java高级\QQ截图20200313153745.png" alt></p>
 <p><img src="/.com//Users\Administrator\blogs\source\_posts\java高级\QQ截图20200313153900.png" alt></p>
 
-          
-        
       
     </div>
     
@@ -816,581 +650,66 @@
     
 
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/java%E4%B8%AD%E7%BA%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叶子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wofour.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="叶子优选">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/14/java%E4%B8%AD%E7%BA%A7/" itemprop="url">java中级</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-14T15:39:09+08:00">
-                2020-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/14/java%E4%B8%AD%E7%BA%A7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/14/java%E4%B8%AD%E7%BA%A7/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  552 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一-Js原生Ajax和Jquery的Ajax"><a href="#一-Js原生Ajax和Jquery的Ajax" class="headerlink" title="一.Js原生Ajax和Jquery的Ajax"></a>一.Js原生Ajax和Jquery的Ajax</h2><h5 id="1、Ajax概述"><a href="#1、Ajax概述" class="headerlink" title="1、Ajax概述"></a>1、Ajax概述</h5><ol>
-<li><p>什么是同步.什么是异步</p>
-<ul>
-<li>同步现象：客户端发送请求到服务器端，当服务器返回响应之前，客户端都处于等待卡死状态</li>
-<li>异步现象：客户端发送请求到服务器端，无论服务器是否返回响应，客户端都可以随意做其他事情，不会被卡死</li>
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    叶子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/02/16/java%E9%AB%98%E7%BA%A7/" title="java高级">http://yoursite.com/2020/02/16/java%E9%AB%98%E7%BA%A7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-</li>
-<li><p>json数据格式(重要)</p>
-<ol>
-<li><p>json是一种与语言无关的数据交换的格式，作用：</p>
-<ol>
-<li>使用ajax进行前后台数据交换</li>
-<li>移动端与服务端的数据交换</li>
-</ol>
-</li>
-<li><p>Json格式与解析</p>
-<ol>
-<li><p>json有两种格式：</p>
-<p>   1）对象格式：{“key1”:obj,”key2”:obj,”key3”:obj…}</p>
-<p>   2）数组/集合格式：[obj,obj,obj…]</p>
-</li>
-</ol>
-</li>
-<li><p>json转换插件</p>
-<ol>
-<li><p>将java的对象或集合转成json形式字符串</p>
-</li>
-<li><p>json的转换插件是通过java的一些工具，直接将java对象或集合转换成json字符串。</p>
-<p>常用的json转换工具有如下几种：</p>
-<p>​    1）jsonlib</p>
-<p>​    2）Gson：google</p>
-<p>​    3）fastjson：阿里巴巴</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="二-Request请求"><a href="#二-Request请求" class="headerlink" title="二.Request请求"></a>二.Request请求</h2><h5 id="1-通过request获得请求行"><a href="#1-通过request获得请求行" class="headerlink" title="1.通过request获得请求行"></a>1.通过request获得请求行</h5><ol>
-<li>获得客户端的请求方式：<a href="http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html" target="_blank" rel="noopener">String</a> getMethod()</li>
-<li>获得请求的资源：<ul>
-<li><a href="http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html" target="_blank" rel="noopener">String</a>  getRequestURL() —-所有地址 </li>
-<li>StringBuffer  getRequestURL() —-http 网络资源</li>
-<li>String  getContextPath()  —-web应用的名称</li>
-<li>String getQueryString() —-get提交url地址后的参数字符串</li>
-<li>注意:request获得客户机（客户端）的一些信息</li>
-<li>request.getRemoteAddr() —- 获得访问的客户端IP地址</li>
-</ul>
-</li>
-</ol>
-<h5 id="2-通过request获得请求头"><a href="#2-通过request获得请求头" class="headerlink" title="2.通过request获得请求头"></a>2.通过request获得请求头</h5><ol>
-<li>long getDateHeader(String name)</li>
-<li>String getHeader(String name)</li>
-</ol>
-<h5 id="3-通过request获得请求体"><a href="#3-通过request获得请求体" class="headerlink" title="3.通过request获得请求体"></a>3.通过request获得请求体</h5><ol>
-<li>String getParameter(String name)</li>
-<li>String[] getParameterValues(String name)</li>
-<li>Map<String,String[]> getParameterMap()</String,String[]></li>
-</ol>
-<h5 id="4-request转发和域"><a href="#4-request转发和域" class="headerlink" title="4.request转发和域"></a>4.request转发和域</h5><p>​    request.getRequestDispatcher(转发的地址).forward(req,resp);</p>
-<p>​    request.setAttribute(name,value)</p>
-<p>​    request.getAttribute(name)</p>
-<hr>
-<h2 id="三-Http协议和Tomcat服务器"><a href="#三-Http协议和Tomcat服务器" class="headerlink" title="三.Http协议和Tomcat服务器"></a>三.Http协议和Tomcat服务器</h2><h5 id="1-http协议"><a href="#1-http协议" class="headerlink" title="1.http协议"></a>1.http协议</h5><ol>
-<li><p>什么是http协议:HTTP(超文本传输协议)是互联网上最为广泛的网络协议</p>
-</li>
-<li><p>http协议的组成:http协议有http请求和http响应组成,挡在浏览器中输入地址访问某个网站时,你的浏览器会将你的请求封装成一个Http请求发送给服务器站点，服务器接收到请    求后会组织响应数据封装成一个Http响应返回给浏览器。即没有请求就没有响应。</p>
-</li>
-</ol>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
+      </div>
     
 
     <footer class="post-footer">
       
 
       
-
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叶子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wofour.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="叶子优选">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url">java数据与算法</a></h1>
+        <div class="post-widgets">
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-11T13:50:02+08:00">
-                2020-01-11
-              </time>
-            
+        
 
-            
-
-            
-          </span>
-
+        
           
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  980 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><h5 id="1-数据结构和算法面试题"><a href="#1-数据结构和算法面试题" class="headerlink" title="1.数据结构和算法面试题"></a>1.数据结构和算法面试题</h5><ol>
-<li><p><strong>算法是程序的灵魂</strong>,优秀的程序可以再海量数据计算时,依然保持着告诉计算</p>
-</li>
-<li><p>一般来讲,程序会使用了内存计算框架(比如Spark)和缓存技术(比如Redis)来优化程序,在深入的思考一下,这些计算框架和缓存技术,他的核心功能在哪部分呢?</p></li></ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/11/java%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%AE%97%E6%B3%95/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/14/java%E4%B8%AD%E7%BA%A7/" rel="next" title="java中级">
+                <i class="fa fa-chevron-left"></i> java中级
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叶子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wofour.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="叶子优选">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/" itemprop="url">java基础知识大复习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-11T09:00:05+08:00">
-                2020-01-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  15.7k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  59 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="java基础知识复习"><a href="#java基础知识复习" class="headerlink" title="java基础知识复习"></a>java基础知识复习</h1><h2 id="一-java基础"><a href="#一-java基础" class="headerlink" title="一.java基础"></a>一.java基础</h2><h4 id="1-计算机基础知识"><a href="#1-计算机基础知识" class="headerlink" title="1.计算机基础知识"></a>1.计算机基础知识</h4><ol>
-<li><p>计算机(Computer)全称：电子计算机，俗称==电脑==。计算机(Computer)全称：电子计算机，俗称电脑。由硬件和软件所组成,没有安装任何软件的计算机成为裸机。常见的形式有台式计算机、笔记本计算机、大型计算机等。</p></li></ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/11/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%A4%A7%E5%A4%8D%E4%B9%A0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1400,175 +719,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/10/%E5%85%A5%E9%97%A8markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叶子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wofour.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="叶子优选">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/10/%E5%85%A5%E9%97%A8markdown/" itemprop="url">入门markdown.md</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-10T09:51:44+08:00">
-                2020-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/10/%E5%85%A5%E9%97%A8markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/10/%E5%85%A5%E9%97%A8markdown/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  291 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Markdown快速入门-typora"><a href="#Markdown快速入门-typora" class="headerlink" title="Markdown快速入门(typora)"></a>Markdown快速入门(typora)</h1><h2 id="1、代码块"><a href="#1、代码块" class="headerlink" title="1、代码块:"></a>1、代码块:</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/10/%E5%85%A5%E9%97%A8markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1576,6 +731,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -1596,8 +758,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1667,6 +838,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Hibernate框架"><span class="nav-number">1.</span> <span class="nav-text">一、Hibernate框架</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-hibernate入门"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.hibernate入门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-HQL语句"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.HQL语句</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、spring框架"><span class="nav-number">2.</span> <span class="nav-text">二、spring框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-spring（春天-弹簧-泉水）"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.spring（春天  弹簧  泉水）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-SpringMVC框架"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.SpringMVC框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Spring-boot框架"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.Spring boot框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Springcloud框架"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.Springcloud框架</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1847,6 +1034,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2280,26 +1471,6 @@ setInterval("createtime()",250);
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

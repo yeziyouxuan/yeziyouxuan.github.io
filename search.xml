@@ -1,6 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>java高级</title>
+    <url>/2020/02/16/java%E9%AB%98%E7%BA%A7/</url>
+    <content><![CDATA[<h2 id="一、Hibernate框架"><a href="#一、Hibernate框架" class="headerlink" title="一、Hibernate框架"></a>一、Hibernate框架</h2><h5 id="1-hibernate入门"><a href="#1-hibernate入门" class="headerlink" title="1.hibernate入门"></a>1.hibernate入门</h5><ol>
+<li>Hibernate:是一个开放源代码的<strong>对象关系映射</strong>框架;对JDBC进行了非常<strong>轻量级</strong>的对象封装;它将POJO与数据库表建立映射关系，是一个全自动的orm框架,hibernate可以自动生成SQL语句，自动执行,跨数据库；</li>
+<li><p>hibernate配置文件：主配置文件： 1个   </p>
+<ul>
+<li>连接数据库信息；hibernate运行参数,指定映射文件的位置</li>
+<li>映射文件：  若干;实体类和数据库表的映射;实体类的属性和数据库表的列 映射</li>
+</ul>
+</li>
+<li><p>hibernate 访问数据库7步走:</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//读取主配置文件 hibernate.cfg.xml</span></span><br><span class="line">Configuration   cfg   =  <span class="keyword">new</span>   configuration().configure();</span><br><span class="line"><span class="comment">//读取映射文件   会话工厂</span></span><br><span class="line">SessionFactory   sf   =  cfg.buildSessionFactory();</span><br><span class="line"><span class="comment">//获取绘画对象</span></span><br><span class="line">Session    ss  =  sf.openSession();</span><br><span class="line"><span class="comment">//启动事务</span></span><br><span class="line">ss.beginTransaction();</span><br><span class="line"><span class="comment">//修改数据  根据id修改的  ，参数为实体类对象；</span></span><br><span class="line"><span class="comment">//sn.save(uuu);</span></span><br><span class="line"><span class="comment">//sn.update(uuu);</span></span><br><span class="line">sn.delete(uuu);</span><br><span class="line"><span class="comment">//通过sn获得事务对象。提交事务  //提交事务  ,回滚事务</span></span><br><span class="line">sn.getTransaction().commit();</span><br><span class="line"><span class="comment">//关闭会话</span></span><br><span class="line">sn.close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">get  load  查询数据：</span><br><span class="line">    查询不存在的数据时，报错方式不一样</span><br><span class="line">   laod查询不存在的数据：在查询时报错</span><br><span class="line">    get查询不存在的数据： 返回空指针</span><br><span class="line">    </span><br><span class="line">    其他方面区别？？？</span><br><span class="line">    			load:会有一个延迟查询</span><br><span class="line">                get: 没有延迟查询</span><br><span class="line"></span><br><span class="line">hibernate实体类对象持久化的三个状态：</span><br><span class="line">	在内存：V   session缓存：X      数据库：X=======瞬时状态  </span><br><span class="line">    在内存：V   session缓存：V      数据库：V=======持久状态  		 </span><br><span class="line">    在内存：V   session缓存：X      数据库：V=======游离    脱管</span><br><span class="line"></span><br><span class="line">HQL自带的分页方法:</span><br><span class="line">ssh.setFirstResult(<span class="number">0</span>);<span class="comment">///(pageNum-1)*pageSize );</span></span><br><span class="line">ssh.setMaxResults(<span class="number">5</span>);<span class="comment">//设定每页显示多少行</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>面向对象编程中2种关系；</p>
+<ul>
+<li>关联:(一个类持有另一个类的对象)</li>
+<li>泛化:(继承)</li>
+</ul>
+</li>
+<li><p>多对一</p>
+<ul>
+<li>数据库：街道表有外键字段指向区表的主键  district_id</li>
+<li>实体类  ： 街道的实体类增加区实体类的对象属性；setter  getter<ul>
+<li>删除了  HOusess setter  getter  </li>
+<li>删除   Inteter  districtId  setter  getter </li>
+<li>增加： private  District  district;  setter getter</li>
+<li>区的实体类，没有任何变化；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="2-HQL语句"><a href="#2-HQL语句" class="headerlink" title="2.HQL语句"></a>2.HQL语句</h5><hr>
+<h2 id="二、spring框架"><a href="#二、spring框架" class="headerlink" title="二、spring框架"></a>二、spring框架</h2><h4 id="1-spring（春天-弹簧-泉水）"><a href="#1-spring（春天-弹簧-泉水）" class="headerlink" title="1.spring（春天  弹簧  泉水）"></a>1.spring（春天  弹簧  泉水）</h4><ol>
+<li>开源综合性质的企业级J2EE框架；是轻量级的IoC和AOP的容器框架。</li>
+<li>备注</li>
+</ol>
+<ul>
+<li>Spring 与 Struts Hibernate 等单层框架不同。Spring 致力于以一个统一的高效的方式构造整个应用，并且可以将单层框架以最佳的方式揉和在一起。建立一个连贯的体系，即提供更完善的开发环境的框架，可以为POJO对象提供企业级的服务。</li>
+</ul>
+<ol>
+<li><p>EJB</p>
+<p>A. 企业级JavaBean（Enterprise JavaBean, EJB）是一个用来构筑企业级应用的服务器端可被管理组件。</p>
+<p>B. EJB是一个封装有某个应用程序之业务逻辑服务器端组件。</p>
+<p>C. 商务软件的核心部分是它的业务逻辑。业务逻辑抽象了整个商务过程的流程，并使用计算机语言将他们实现。 …… J2EE 对于这个问题的处理方法是将业务逻辑从客户端软件中抽取出来，封装在一个组件中。这个组件运行在一个独立的服务器上，客户端软件通过网络调用组件提供的服务以实现业务逻辑，而客户端软件的功能单纯到只负责发送调用请求和显示处理结果。在J2EE 中，这个运行在一个独立的服务器上，并封装了业务逻辑的组件就是EJB（Enterprise JavaBean）组件。</p>
+</li>
+<li><p>java  企业级开发：</p>
+<ul>
+<li>规模、功能数量 </li>
+<li>性能：绝对用户数量：</li>
+<li>数据量：</li>
+<li>并发量  :</li>
+<li>安全性：</li>
+</ul>
+</li>
+<li><p>轻量级：褒义词  易学易用。侵入性低;</p>
+</li>
+<li><p><strong>spring两大特性:</strong></p>
+<ul>
+<li><p>IoC/DI : 依赖注入</p>
+<ul>
+<li>inverse of Controller 控制反转</li>
+<li>action —-&gt;  biz  —-&gt;  dao</li>
+<li>UserBiz userbiz;</li>
+<li>userbiz.login();</li>
+<li>优点:降低耦合;bean对象的容器转换为Ioc容器</li>
+</ul>
+</li>
+<li><p>AOP:面向切面编程</p>
+<ul>
+<li>Aspect ortanted program</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">IOC:  控制反转。 它是指创建java对象的权限转移给spring框架来做。</span><br><span class="line"><span class="comment">//用上spring框架时，spring提供一个存放对象的容器、集合。当项目启动时，spring把配置好的每个类都创建一份对象放入这个容器内。现在当用户类需要街道类对象时，由sprng框架从容器内拿出一各街道的对象“放入”用户类对象上，供用户对象使用</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//----是不是用户对象关联的街道对象的创建权限由我们的用户类转移到了spring框架上？</span></span><br><span class="line">之前的MVC框架将项目模块分成三种。</span><br><span class="line"> 并使得model类型的模块和view类型的模块耦合度降低。</span><br><span class="line">使用spring的IOC后，它在MVC的基础上  更进一步使得项目中任意的两个模块耦合度降低。 </span><br><span class="line">依赖注入（DependencyInjection）特          征来实现容器对Bean的管理。这里最基本的概念是BeanFactory，它是任何Spring应          用的核心。BeanFactory是工厂模式的一个实现，它使用IoC将应用配置和依赖说明          从实际的应用代码中分离出来。</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"><span class="number">1</span>.应用上下文模块</span><br><span class="line">核心模块的BeanFactory使Spring成为一个容器，而上下文模块使它成为一个框          架。这个模块扩展了BeanFactory的概念，增加了对国际化（I18N）消息、事件传播           以及验证的支持。另外，这个模块提供了许多企业服务，例如电子邮件、JNDI访问            EJB集成、远程以及时序调度（scheduling）服务。也包括了对模版框架例如                 Velocity和FreeMarker集成的支持。</span><br><span class="line"><span class="number">2</span>.</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">AOP: 面向切面编程</span><br><span class="line">解释：许多类需要同一种功能时，spring通过配置切面的语法给选定的若干类增加统一的新功能。</span><br><span class="line">举例：当DAO类需要数据库事务时，我们之前的做法是，在每个DAO类的指定函数内增加数据库事务功能。用spring AOP后，我们数据库事务这样的代码就写一份。 然后通过切面的语法将数据库事务的功能设置到dao类的指定函数上。</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用AOP后，重复的代码从应用模块中抽取出来一次性实现。并且不局限于拦截器那样的环境(页面发请求才可以拦截)。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//问题:为什么使用spring的2大功能</span></span><br><span class="line">A.依赖注入使得在一个配置复杂的项目里可以轻松管理模块依赖关系。降低模块耦合度。低耦合度一直是我们软件设计、开发追求的方向。因为它带来灵活、独立性强的模块。这样的代码是便于维护、管理的。在大项目里，我们更关注的是项目的可持续维护。</span><br><span class="line">B.使用AOP使得我们的代码里大量减少“样板式”代码。这个AOP的重点是提升开发效率的。（样板式代码是指 在各模块内 重复功能的代码：启动数据库事务、关闭连接、写日志等。）使用AOP后，重复的“体力活”大量减少。</span><br></pre></td></tr></table></figure>
+<h4 id="2-SpringMVC框架"><a href="#2-SpringMVC框架" class="headerlink" title="2.SpringMVC框架"></a>2.SpringMVC框架</h4><ol>
+<li><p>注解:annotation</p>
+<p>注解    也叫元数据。一种代码级别的说明</p>
+<p>它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行描述、说明。</p>
+</li>
+<li><p>spring常用的注解:</p>
+<ul>
+<li>@Controller: 用在Action(处理器 控制器)类上，表明该类是一个Action,它能够被自动扫描加入到容器</li>
+<li>@Service:用来表明该类是一个业务逻辑类， 它能够被自动扫描加入到容器</li>
+<li>@Repository(仓库)：表明该类是一个Dao, 它能够被自动扫描加入到容器</li>
+<li>@Transactional:用在方法上的注解。声明该业务方法会被注入事务管理代码， 如果是查询 一般写入参数readonly</li>
+<li>@Transactional(readOnly=true)  要启用该注解 spring配置文件中加入<pre><code>  &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;
+</code></pre></li>
+</ul>
+</li>
+<li><p>spring  MVC深入</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请求的转发管理：</span><br><span class="line">	 在cotroller类上加RequestMapping(<span class="string">"/a/b/d/"</span>)  </span><br><span class="line">	     user/login.action </span><br><span class="line">	     user/register.action</span><br><span class="line">	     user/...</span><br><span class="line">	     voucher/list.action</span><br><span class="line">	     voucher/saveVoucher.action</span><br><span class="line">	 页面请求路径 的前缀部分 </span><br><span class="line">	 副作用：在当前controller跳转视图时，需要先返回到网站根路径。（作业）</span><br><span class="line">	 </span><br><span class="line"> 将页面请求数据绑定给方法的形参；</span><br><span class="line">	  <span class="number">1</span>. 基本类型；<span class="meta">@RequestParam</span></span><br><span class="line">	  <span class="number">2</span>. 实体类对象；<span class="meta">@ModelAttribute</span></span><br><span class="line">	  <span class="number">3</span>. 集合数据；</span><br><span class="line">	    <span class="number">3.1</span>  List&lt;String&gt; 简单值 需要加上注解</span><br><span class="line">	    (<span class="meta">@RequestParam</span>(<span class="string">"names"</span>) List&lt;String&gt; names)</span><br><span class="line">	    <span class="number">3.2</span>在A实体类定义集合  List&lt;B实体类&gt;</span><br><span class="line">	    页面:  name=<span class="string">"集合变量名称[n].B实体类属性名称"</span></span><br><span class="line"></span><br><span class="line">url路径参数：（作业）</span><br><span class="line">	     <span class="number">1</span>.页面发请求时 将数据放入url路径最后一部分；</span><br><span class="line">		 action类<span class="meta">@RequestMapping</span>(<span class="string">"固定部分/&#123;占位符名称&#125;"</span>)</span><br><span class="line">		 action类的方法参数上 定义和占位符同名参数 参数之前写<span class="meta">@PathVariable</span></span><br><span class="line">	 </span><br><span class="line">	     <span class="number">2</span>.正则表达式形式的url参数：</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>java项目结构类型</strong></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.单一应用架构</span></span><br><span class="line">当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本,此场景下适合使用简化增删改查工作量的数据访问框架（ORM),ORM即Object Relational Mappin，译为对象关系映射，ORM是一种程序技术，用于实现面向对象编程语言里不同类型系统的数据之间的转换，从效果上说，它其实是创建了一个可在编程语言里使用的虚拟对象数据库，即将现实中的数据与程序中的对象进行了对应</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.垂直应用架构</span></span><br><span class="line">当访问量逐渐增大，单一应用增加机器带来的加速度越来越小，将应用拆成互不相干的几个应用，以提升效率。这就是垂直应用架构，也就是我们常说的MVC框架（Web框架）,MVC即Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC其实也是设计模式的一种，它大大的增加了Web应用的开发效率。</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.分布式服务架构</span></span><br><span class="line">当垂直应用越来越多，应用之间交互不可避免，将核心业务抽取出来，作为独立的服务,逐渐形成稳定的服务中心，使前端应用能更快速的响应多变的市场需求。此场景下适合使用提高业务复用及整合的分布式服务框架（RPC远程调用框架）。</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.流动计算架构</span></span><br><span class="line">当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。此场景适合使用提高机器利用率的资源调度和治理中心架构（SOA）。面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）通过这些服务之间定义良好的接口和契约联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构建在各种各样的系统中的服务可以以一种统一和通用的方式进行交互</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.SOA架构</span></span><br><span class="line">SOA(Service-Oriented Architecture[<span class="string">'ɑːkɪtektʃə]建筑学)	   </span></span><br><span class="line"><span class="string">     面向服务的体系结构,它是一个组件模型。</span></span><br><span class="line"><span class="string">     它将应用程序的不同功能单元(服务)通过这些服务之间定义良好的契约和接口联系起来.</span></span><br><span class="line"><span class="string">     接口采用中立的方式进行定义(独立于软硬件),</span></span><br><span class="line"><span class="string">     使得这些应用程序之间以 一种统一的方式进行交互.</span></span><br><span class="line"><span class="string">SOA是一个规范 ,webservice 是一个SOA 的一个实现 .</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SOAP:Simple Object Access Protocol 简单对象访问协议</span></span><br><span class="line"><span class="string">WSDL:Web Services Description Language 网络服务描述语言</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-Spring-boot框架"><a href="#3-Spring-boot框架" class="headerlink" title="3.Spring boot框架"></a>3.Spring boot框架</h4><ol>
+<li>特点:由pivotal团队提供的全新的框架,简化新的Spring应用的初始搭建，及开发过程。无需过多关注XML的配置,即提供了一堆依赖打包，并按照使用习惯解决了依赖问题。需要构建工具的支持，如maven或gradle</li>
+<li>特点:创建独立的Spring应用,嵌入式的tomcat,简化maven配置,自动装配Spring,没有代码产生，并且对XML也没有配置要求</li>
+<li>th标签的使用</li>
+</ol>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.显示简单值</span></span><br><span class="line">&lt;h1 th:text="$&#123;name&#125;"&gt;&lt;/h1&gt;</span><br><span class="line"><span class="comment">//2.显示对象的属性</span></span><br><span class="line">&lt;h1 th:text="$&#123;user.name&#125;"&gt;&lt;/h1&gt;</span><br><span class="line"><span class="comment">//3.th标签的循环(循环哪一个标签九江循环写到哪一个标签里)</span></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li th:each="uu:$&#123;users&#125;" th:text="$&#123;uu.name&#125;"&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="comment">//4.th标签的判断</span></span><br><span class="line">&lt;h1 th:if="$&#123;uu.name.equals('xxx')&#125;"&gt;条件成立时应当书写的内容&lt;/h1&gt;</span><br><span class="line">注：<span class="keyword">if</span>的条件判断的语法与java语法一致</span><br><span class="line"><span class="comment">//5.th标签给input框赋值</span></span><br><span class="line">&lt;input type=<span class="string">"text"</span> th:value=<span class="string">"$&#123;uu.name&#125;"</span>/&gt;</span><br><span class="line"><span class="comment">//6.th标签给select下拉列表复制</span></span><br><span class="line">&lt;select&gt;</span><br><span class="line">    &lt;option th:value="$&#123;uu.name&#125;" th:text="$&#123;uu.password&#125;"&gt;&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"><span class="comment">//7.th标签给超链接及src的请求提供参数</span></span><br><span class="line">&lt;a th:href="@&#123;test.action(id=$&#123;uu.id&#125;,name=$&#123;uu.name&#125;)&#125;"&gt;超链接&lt;/a&gt;</span><br><span class="line">&lt;img th:src=<span class="string">"@&#123;getImageById(id=$&#123;photo.id&#125;)&#125;"</span>/&gt;</span><br><span class="line">注:不需要提供参数或参数不来自于后台传来的变量时则使用正常的html格式即可。</span><br><span class="line"><span class="comment">//8.th标签创建时间 及对时间显示的格式化</span></span><br><span class="line">创建时间</span><br><span class="line">&lt;h1 th:text="$&#123;#dates.createNow()&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">格式化时间</span><br><span class="line">&lt;h1 th:text="$&#123;#dates.format(#dates.createNow(),'yyyy-MM-dd HH-mm-ss')&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">获取年、月、日、时、分、秒</span><br><span class="line">    &lt;h1 th:text="$&#123;#dates.day(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">	&lt;h1 th:text="$&#123;#dates.month(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">	&lt;h1 th:text="$&#123;#dates.year(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">	&lt;h1 th:text="$&#123;#dates.hour(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">	&lt;h1 th:text="$&#123;#dates.minute(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">	&lt;h1 th:text="$&#123;#dates.second(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br><span class="line">    &lt;h1 th:text="$&#123;#dates.dayOfWeek(#dates.createNow())&#125;"&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>前后端分离</p>
+<ol>
+<li>背景:前后端分离已成为互联网项目开发的业界标准使用方式，通过nginx+tomcat的方式（也可以中间加一个nodejs）有效的进行解耦，并且前后端分离会为以后的大型分布式架构，微服务架构、多端化服务（多种客户端，例如浏览器、车载终端、安卓、IOS等等）打下坚实的基础。这个步骤是系统架构从猿进化承认的必经之路。</li>
+<li>核心思想：前端HTML页面通过ajax调用后台的RESTFUL API接口并使用JSON进行数据交互。</li>
+<li>Web 服务器：一般指像Nginx、Apache这类服务器，他们一般只能解析静态资源</li>
+<li>应用服务器：一般像指Tomcat、Jetty这类服务器可以解析静态资源也可以解析动态资源，但解析静态资源的能力没有web服务器好。</li>
+</ol>
+</li>
+<li><p>同源策略（Same_orign Policy）</p>
+<ul>
+<li>即在同一个浏览器中访问的网站不能访问另一个网站中的数据，除非二者具有相同的Orign 即拥有相同的协议，主机地址，以及端口号。</li>
+<li>例如：<pre><code>      同一域名，不同文件夹，非跨域。
+      同一域名，同一文件夹，非跨域。
+      不同域名，文件路径相同，跨域。
+      同一域名。不同端口，跨域。
+</code></pre></li>
+<li>前后端分离后跨域的解决方案:在后台代码添加，Filter过滤器</li>
+<li>启动类中配置对Filter的扫描<pre><code>      @ServletComponentScan(&quot;过滤器所在的包名&quot;)
+</code></pre></li>
+<li>注解@RestController</li>
+<li>相当于@ResponseBody+@Controller 返回json数据不需要在方法前面加@ResponseBody注解了，但使用@RestConroller这个注解，就不能返回jsp.html页面，返回的只是Return 里的内容。视图解析器无法解析jsp、html页面。而我们的ajax请求正好不用返回页面，只需要返回数据。</li>
+</ul>
+</li>
+<li><p>pom.xml依赖的配置主要分为:两大依赖:1.模块依赖；2.框架依赖</p>
+</li>
+<li>三个部分:1.对于项目本身模块的依赖；2:对于自己公司的封装包的依赖；3：对于第三方包的依赖。</li>
+</ol>
+<hr>
+<h4 id="4-Springcloud框架"><a href="#4-Springcloud框架" class="headerlink" title="4.Springcloud框架"></a>4.Springcloud框架</h4><ol>
+<li>微服务（Microservices）</li>
+</ol>
+<ul>
+<li><p>是一种架构风格，一个大型复杂软件应用由一个或多个微服务组成。系统中的各个微服务可被独立部署，各个微服务之间是松耦合的。每个微服务仅关注于完成一件任务并很好地完成该任务。在所有情况下，每个任务代表着一个小的业务能力。</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">微服务的核心就是将传统的一站式应用根据业务拆分成一个一个的服务,彻底的去耦合,每一个微服务提供单个业务功能的服务,一个服务做一件事,从技术角度看就是一种小而独立的处理过程,类似进程概念,能够自行单独启动或销毁,拥有自己独立的数据库.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>组成:</p>
+<ol>
+<li><p>Eureka:</p>
+<ol>
+<li>Spring Cloud Netflix的Eureka 是一个服务注册与发现模块。</li>
+<li>@EnableEurekaServer 启动服务注册中心,添加的位置：Springboot的启动类上。</li>
+<li>Eureka是有界面的的访问地址：localhost:端口号</li>
+<li>eureka 的配置文件application.properties 或者 application.yml 二者可以相互转化</li>
+<li>转化工具：<a href="http://www.toyaml.com/" target="_blank" rel="noopener">http://www.toyaml.com/</a> </li>
+</ol>
+</li>
+<li><p>Feign 服务消费者</p>
+<ol>
+<li><p>服务消费者指的是服务间的调用。</p>
+</li>
+<li><p>基于Netflix Feign实现的声明式服务调用客户端</p>
+</li>
+<li><p>默认集成了ribbon 所以Feign默认实现了负载均衡。</p>
+</li>
+<li><p>Feign采用的是基于接口的注解 所以功能的实现类为接口形式。</p>
+</li>
+<li><p>@EnableFeignClients 开启Feign 即开启服务消费者。</p>
+<pre><code>  添加的位置：Springboot的启动类上。
+</code></pre></li>
+<li><p>@EnableEurekaClient或@EnableDiscoveryClient</p>
+<pre><code>  将一个微服务注册到服务注册中心，让注册中心能够发现，扫描到该服务。
+</code></pre></li>
+<li><p>二者的区别</p>
+<pre><code>  @EnableEurekaClient      只适用于Eureka作为注册中心。
+  @EnableDiscoveryClient   可以是其它注册中心。
+</code></pre></li>
+<li><p>@FeignClient 定义Feign客户端</p>
+</li>
+<li><p>注意:注意事项<br>  Feign 不支持GET请求传递POJO 对象 解决方法</p>
+<p>  1.将POJO拆散成一个个单独的属性放在方法参数中</p>
+<p>  2.把方法参数变成Map 传递</p>
+<p>  3.添加Feign 拦截器实现（待定)</p>
+</li>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Ribbon 负载均衡</p>
+<ul>
+<li>负载均衡是高可用网络基础架构的一个关键组成部分，有了负载均衡，我们通常可以将我们的服务部署多台，然后通过负载均衡将用户的请求分发到不同的服务器用来提高网站、应用，数据库或其它服务的的性能以及可靠性。</li>
+</ul>
+</li>
+<li><p>作用 : 解决如单点故障问题，响应速度慢问题。</p>
+<ol>
+<li>注：通常情况下所有的后端服务器会保证提供相同的内容，以便用户无论哪个服务器响应，都能收到一致的内容。</li>
+</ol>
+</li>
+<li><p>Spring zuul 网关服务（Spring cloud Gateway）</p>
+<ol>
+<li>是整个微服务架构系统的门面一样，所有的外部客户端访问都需要经过它来进行调度和过滤。</li>
+<li>例如帮我们实现请求的过滤功能。</li>
+<li>@EnableZuulProxy 实现启动网关。</li>
+<li>添加网关后的请求地址<pre><code>  localhost:网关端口号/消费者服务名/原本的请求
+</code></pre></li>
+</ol>
+</li>
+<li><p>开发中目前有两种开发模式</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.前后端分离</span></span><br><span class="line">我们java程序员,相对而言比较幸福,why?</span><br><span class="line">我们只需要管理后端,给前端的H5工程师就按照规定</span><br><span class="line">Rest地址+输入参数格式和报文约定+输出参数</span><br><span class="line"></span><br><span class="line">例子:$.post(rest,jsonParameter,callback)</span><br><span class="line"></span><br><span class="line">可以灵活搭配,连接公共库+连接独立库? ? ?</span><br><span class="line">--------------------------------------------------</span><br><span class="line"><span class="comment">//2.全栈工程师</span></span><br><span class="line">H5+javaEE.......</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>Spring全家桶</strong></li>
+</ol>
+<p><img src="/.com//Users\Administrator\blogs\source\_posts\java高级\QQ截图20200313153745.png" alt></p>
+<p><img src="/.com//Users\Administrator\blogs\source\_posts\java高级\QQ截图20200313153900.png" alt></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java中级</title>
+    <url>/2020/02/14/java%E4%B8%AD%E7%BA%A7/</url>
+    <content><![CDATA[<h2 id="一-Js原生Ajax和Jquery的Ajax"><a href="#一-Js原生Ajax和Jquery的Ajax" class="headerlink" title="一.Js原生Ajax和Jquery的Ajax"></a>一.Js原生Ajax和Jquery的Ajax</h2><h5 id="1、Ajax概述"><a href="#1、Ajax概述" class="headerlink" title="1、Ajax概述"></a>1、Ajax概述</h5><ol>
+<li><p>什么是同步.什么是异步</p>
+<ul>
+<li>同步现象：客户端发送请求到服务器端，当服务器返回响应之前，客户端都处于等待卡死状态</li>
+<li>异步现象：客户端发送请求到服务器端，无论服务器是否返回响应，客户端都可以随意做其他事情，不会被卡死</li>
+</ul>
+</li>
+<li><p>json数据格式(重要)</p>
+<ol>
+<li><p>json是一种与语言无关的数据交换的格式，作用：</p>
+<ol>
+<li>使用ajax进行前后台数据交换</li>
+<li>移动端与服务端的数据交换</li>
+</ol>
+</li>
+<li><p>Json格式与解析</p>
+<ol>
+<li><p>json有两种格式：</p>
+<p>   1）对象格式：{“key1”:obj,”key2”:obj,”key3”:obj…}</p>
+<p>   2）数组/集合格式：[obj,obj,obj…]</p>
+</li>
+</ol>
+</li>
+<li><p>json转换插件</p>
+<ol>
+<li><p>将java的对象或集合转成json形式字符串</p>
+</li>
+<li><p>json的转换插件是通过java的一些工具，直接将java对象或集合转换成json字符串。</p>
+<p>常用的json转换工具有如下几种：</p>
+<p>​    1）jsonlib</p>
+<p>​    2）Gson：google</p>
+<p>​    3）fastjson：阿里巴巴</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="二-Request请求"><a href="#二-Request请求" class="headerlink" title="二.Request请求"></a>二.Request请求</h2><h5 id="1-通过request获得请求行"><a href="#1-通过request获得请求行" class="headerlink" title="1.通过request获得请求行"></a>1.通过request获得请求行</h5><ol>
+<li>获得客户端的请求方式：<a href="http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html" target="_blank" rel="noopener">String</a> getMethod()</li>
+<li>获得请求的资源：<ul>
+<li><a href="http://java.sun.com/j2se/1.5/docs/api/java/lang/String.html" target="_blank" rel="noopener">String</a>  getRequestURL() —-所有地址 </li>
+<li>StringBuffer  getRequestURL() —-http 网络资源</li>
+<li>String  getContextPath()  —-web应用的名称</li>
+<li>String getQueryString() —-get提交url地址后的参数字符串</li>
+<li>注意:request获得客户机（客户端）的一些信息</li>
+<li>request.getRemoteAddr() —- 获得访问的客户端IP地址</li>
+</ul>
+</li>
+</ol>
+<h5 id="2-通过request获得请求头"><a href="#2-通过request获得请求头" class="headerlink" title="2.通过request获得请求头"></a>2.通过request获得请求头</h5><ol>
+<li>long getDateHeader(String name)</li>
+<li>String getHeader(String name)</li>
+</ol>
+<h5 id="3-通过request获得请求体"><a href="#3-通过request获得请求体" class="headerlink" title="3.通过request获得请求体"></a>3.通过request获得请求体</h5><ol>
+<li>String getParameter(String name)</li>
+<li>String[] getParameterValues(String name)</li>
+<li>Map<String,String[]> getParameterMap()</String,String[]></li>
+</ol>
+<h5 id="4-request转发和域"><a href="#4-request转发和域" class="headerlink" title="4.request转发和域"></a>4.request转发和域</h5><p>​    request.getRequestDispatcher(转发的地址).forward(req,resp);</p>
+<p>​    request.setAttribute(name,value)</p>
+<p>​    request.getAttribute(name)</p>
+<hr>
+<h2 id="三-Http协议和Tomcat服务器"><a href="#三-Http协议和Tomcat服务器" class="headerlink" title="三.Http协议和Tomcat服务器"></a>三.Http协议和Tomcat服务器</h2><h5 id="1-http协议"><a href="#1-http协议" class="headerlink" title="1.http协议"></a>1.http协议</h5><ol>
+<li><p>什么是http协议:HTTP(超文本传输协议)是互联网上最为广泛的网络协议</p>
+</li>
+<li><p>http协议的组成:http协议有http请求和http响应组成,挡在浏览器中输入地址访问某个网站时,你的浏览器会将你的请求封装成一个Http请求发送给服务器站点，服务器接收到请    求后会组织响应数据封装成一个Http响应返回给浏览器。即没有请求就没有响应。</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/01/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
